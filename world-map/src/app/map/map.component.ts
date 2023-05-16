@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class MapComponent {
   // Your component logic goes here
+  bankerName = "Henry";
+  BankerAddress = "1"
 }

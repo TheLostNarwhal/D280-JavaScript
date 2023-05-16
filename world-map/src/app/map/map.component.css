@@ -1,4 +1,6 @@
-
+path {
+  fill: gray;
+}
 path:hover {
-  fill: aquamarine;
+  fill: rgb(245, 123, 8);
 }
