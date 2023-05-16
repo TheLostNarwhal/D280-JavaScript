@@ -6,8 +6,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'world-map';
-  handleMapClick(event: MouseEvent) {
-    // Handle map click event
-  }
 }
