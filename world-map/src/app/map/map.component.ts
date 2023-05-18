@@ -37,13 +37,14 @@ export class MapComponent {
     
   }
   @Output() svgIdSelected = new EventEmitter<string>();
+  @Output() incomeSelected = new EventEmitter<string>();
   @ViewChild(MapInformationComponent)
 private mapInformationComponent!: MapInformationComponent;
 
 handleClick(event: MouseEvent) {
   const path = event.target as SVGPathElement;
   const countryId = path.id;
-  this.svgIdSelected.emit(countryId);
+  //this.svgIdSelected.emit(countryId);
 
   this.countryApiService.getCountryInformation(countryId).subscribe((data: any) => {
     // Extract the necessary information from the API response
@@ -52,7 +53,9 @@ handleClick(event: MouseEvent) {
     const income = data[1][1].value;
     // Extract three other items as needed
     console.log(countryName);
+    console.log(population)
     this.svgIdSelected.emit(countryName);
+    this.incomeSelected.emit(income);
 
     // Pass the retrieved information to the MapInformationComponent if it's available
     if (this.mapInformationComponent) {
