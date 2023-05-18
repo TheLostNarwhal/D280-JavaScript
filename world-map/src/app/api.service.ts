@@ -6,12 +6,17 @@ import { Observable } from 'rxjs'
   providedIn: 'root'
 })
 export class CountryApiService {
-  private baseUrl = 'http://api.worldbank.org/v2';
+  
 
   constructor(private http: HttpClient) { }
 
-  getAllCountries(): Observable<any> {
-    const url = `${this.baseUrl}/country/all`;
-    return this.http.get(url);
-  }
+  
+
+getCountryInformation(countryId: string): Observable<any> {
+  const apiUrl = `http://api.worldbank.org/v2/country/${countryId}/indicator/SP.POP.TOTL?format=json`;
+  return this.http.get(apiUrl);
+  
 }
+
+}
+
