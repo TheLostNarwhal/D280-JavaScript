@@ -6,4 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css',]
 })
 export class AppComponent {
+  selectedSvgId: string = '';
+
+  onSvgIdSelected(svgId: string) {
+    this.selectedSvgId = svgId;
+
+}
 }

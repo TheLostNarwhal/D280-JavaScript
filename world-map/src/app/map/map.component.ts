@@ -1,4 +1,5 @@
-import { Component, HostListener,ElementRef, Input} from '@angular/core';
+import { Component, Output,ElementRef, EventEmitter} from '@angular/core';
+import { MapInformationComponent } from '../map-information/map-information.component';
 
 @Component({
   selector: 'app-map',
@@ -30,13 +31,17 @@ export class MapComponent {
     // Handle mouse out event if needed
     
   }
+  @Output() svgIdSelected = new EventEmitter<string>();
 
   handleClick(event: MouseEvent) {
     const path = event.target as SVGPathElement;
     const countryId = path.id;
-    alert(countryId);
+    this.svgIdSelected.emit(countryId); 
+    return countryId;
     // Emit the countryId to the parent component or perform other actions
   }
+ 
+
 }
 
 

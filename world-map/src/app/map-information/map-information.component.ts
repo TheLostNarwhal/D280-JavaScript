@@ -8,6 +8,8 @@ import { MapComponent } from '../map/map.component';
 })
 
 export class MapInformationComponent implements OnInit {
+  @Input() countryId!: string;
+
   bankerName = "Elizabeth Franklin";
   bankerAddress = '123 Main Street';
   bankerCity = 'Hoboken';
@@ -22,6 +24,7 @@ export class MapInformationComponent implements OnInit {
   employerName = 'Tradelot';
   jobTitle = 'Banker';
   employmentDates = 'January 2014 - Present';
+  
 
  
 
