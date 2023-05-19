@@ -9,9 +9,10 @@ import { MapComponent } from '../map/map.component';
 
 export class MapInformationComponent implements OnInit {
   @Input() countryId!: string;
-  countryName: string | undefined;
-  population: number | undefined;
-  income: number | undefined;
+  @Input() countryIncome!: string;
+  
+  
+
   // Declare three other propertie
 
   bankerName = "Elizabeth Franklin";
@@ -23,9 +24,7 @@ export class MapInformationComponent implements OnInit {
   
   setCountryInformation(countryName: string, population: number, income: number) {
     // Assign the received information to the component properties
-    this.countryName = countryName;
-    this.population = population;
-    this.income = income;
+    
     // Assign three other items as needed
 
     
