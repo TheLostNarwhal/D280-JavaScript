@@ -7,9 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   selectedSvgId: string = '';
+  selectedIncome: string = '';
+
 
   onSvgIdSelected(svgId: string) {
     this.selectedSvgId = svgId;
 
 }
+  onIncomeSelected(incomeid: string) {
+    this.selectedIncome = incomeid;
+  }
 }

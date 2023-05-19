@@ -13,7 +13,7 @@ export class CountryApiService {
   
 
 getCountryInformation(countryId: string): Observable<any> {
-  const apiUrl = `http://api.worldbank.org/v2/country/${countryId}/indicator/SP.POP.TOTL?format=json`;
+  const apiUrl = `http://api.worldbank.org/v2/country/${countryId}?format=json`;
   return this.http.get(apiUrl);
   
 }

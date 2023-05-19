@@ -1,8 +1,17 @@
 <div class="container">
     <div class="left-column">
-      <app-map (svgIdSelected)="selectedSvgId = $event"></app-map>
+      <app-map 
+      (svgIdSelected)="selectedSvgId = $event"
+      (incomeSelected) = "selectedIncome = $event"
+      
+      
+      ></app-map>
     </div>
     <div class="right-column">
-      <app-map-information [countryId]="selectedSvgId"></app-map-information>
+      <app-map-information 
+      [countryId]="selectedSvgId"
+      [countryIncome]="selectedIncome"
+      
+      ></app-map-information>
     </div>
   </div>

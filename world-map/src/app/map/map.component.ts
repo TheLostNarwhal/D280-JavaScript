@@ -48,9 +48,13 @@ handleClick(event: MouseEvent) {
 
   this.countryApiService.getCountryInformation(countryId).subscribe((data: any) => {
     // Extract the necessary information from the API response
-    const countryName = data[1][0].country.value;
-    const population = data[1][0].value;
-    const income = data[1][1].value;
+    const countryName = data[1][0].name;
+    const population = data[1][0].population;
+    const income = data[1][0].incomeLevel.value;
+    const capitalCity = data[1][0].capitalCity;
+    const longitude = data[1][0].longitude;
+    const latitude = data[1][0].latitude;
+    const region = data[1][0].region.value;
     // Extract three other items as needed
     console.log(countryName);
     console.log(population)
