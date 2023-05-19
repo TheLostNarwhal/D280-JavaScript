@@ -1,17 +1,22 @@
 <div class="container">
-    <div class="left-column">
-      <app-map 
+  <div class="left-column">
+    <app-map 
       (svgIdSelected)="selectedSvgId = $event"
-      (incomeSelected) = "selectedIncome = $event"
-      
-      
-      ></app-map>
-    </div>
-    <div class="right-column">
-      <app-map-information 
+      (incomeSelected)="selectedIncome = $event"
+      (capitalSelected)="selectedCapital = $event"
+      (longitudeSelected)="selectedLongitude = $event"
+      (latitudeSelected)="selectedLatitude = $event"
+      (regionSelected)="selectedRegion = $event"
+    ></app-map>
+  </div>
+  <div class="right-column">
+    <app-map-information 
       [countryId]="selectedSvgId"
       [countryIncome]="selectedIncome"
-      
-      ></app-map-information>
-    </div>
+      [countryCapital]="selectedCapital"
+      [countryLongitude]="selectedLongitude"
+      [countryLatitude]="selectedLatitude"
+      [countryRegion]="selectedRegion"
+    ></app-map-information>
   </div>
+</div>
